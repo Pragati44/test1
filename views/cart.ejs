@@ -1,0 +1,115 @@
+
+<div class="container">
+  <h1 class="cart-title">Your Cart</h1>
+
+  <ul class="cart-items">
+    <% cart.forEach((item) => { %>
+      <li class="cart-item">
+        <div class="cart-item-details">
+          <p class="cart-item-name"><%= item.name %></p>
+          <p class="cart-item-price">$<%= (item.price / 100).toFixed(2) %></p>
+        </div>
+      </li>
+    <% }); %>
+  </ul>
+
+  <div class="checkout-btn-container">
+    <a href="/checkout">
+      <button class="checkout-btn">
+        Proceed to Checkout
+      </button>
+    </a>
+  </div>
+</div>
+
+<style>
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+  }
+
+  
+  .cart-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: #2563EB; 
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+ 
+  .cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cart-item {
+    background-color: #EBF8FF;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #BFDBFE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+  }
+
+ 
+  .cart-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  .cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cart-item-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1E3A8A; 
+  }
+
+  .cart-item-price {
+    font-size: 1.125rem;
+    color: #2563EB; 
+    font-weight: 500;
+  }
+
+  
+  .checkout-btn-container {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+
+  .checkout-btn {
+    background-color: #3B82F6;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+
+  .checkout-btn:hover {
+    background-color: #2563EB; 
+    transform: translateY(-3px); 
+  }
+
+  .checkout-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+</style>
